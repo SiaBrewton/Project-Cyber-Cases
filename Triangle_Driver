@@ -1,0 +1,60 @@
+//Sia Brewton
+//Program 2
+
+import java.util.Scanner;
+
+public class Triangle_Driver
+{
+   public static void main (String [] args)
+   {
+   
+   Scanner keyboard = new Scanner (System.in);
+   Triangle tONE_SHB = new Triangle ();  //Triangle object
+   System.out.println(tONE_SHB); //print variable name to call toString
+   tONE_SHB.changeBase(064); //update values
+   tONE_SHB.setHeight(25);
+   tONE_SHB.setColor("green");
+   System.out.println("\n"+tONE_SHB); //print updated info
+   System.out.print("\nEnter number for Base: ");   //User input values for base, height, color
+   int base = keyboard.nextInt(); 
+   System.out.print("Enter number for Height: ");
+   int height = keyboard.nextInt(); 
+   keyboard.nextLine();
+   System.out.print("Enter a Color: ");
+   String color = keyboard.nextLine();
+   
+   //parameter constructor 
+   Triangle tTWO_SHB =  new Triangle(base ,height, color);
+   System.out.println("\n"+tTWO_SHB);//print triangle 2 info 
+   
+   Triangle tTHREE_SHB =  new Triangle(); //3rd Triangle object 
+   tTHREE_SHB.changeBase( tTWO_SHB.getBase() );   //updated values for triangle 3
+   tTHREE_SHB.setHeight( tONE_SHB.getHeight() );
+   if( tTHREE_SHB.getBase() % 2 != 0 ) //if base is odd 
+   {
+     tTHREE_SHB.setColor( tONE_SHB.getColor() ); // color is from tri1 
+   }
+   else
+   {
+     tTHREE_SHB.setColor( tTWO_SHB.getColor() ); //color is from tri2
+   }
+   
+     System.out.println( "\nTriangle info -\nBase is : " + tTHREE_SHB.getBase() + 
+            "\nHeight is : " + tTHREE_SHB.getHeight() + 
+            "\nColor is :  " + tTHREE_SHB.getColor()  + 
+            "\nArea is :   " + tTHREE_SHB.calArea());
+            
+            
+    //Change tONE color
+    System.out.println("\nTriangle 1 color is :" + tONE_SHB.getColor());  //print before update    
+    System.out.print("\nEnter new color: ");  
+    String colorT1 = keyboard.nextLine();
+    tONE_SHB.setColor(colorT1);      //update 
+    System.out.println("Triangle 1 updated color : " + tONE_SHB.getColor());  //print before update    
+
+   
+    //Total Area
+    double TotalArea = tONE_SHB.calArea() + tTWO_SHB.calArea() +tTHREE_SHB.calArea();
+    System.out.println("\nTotal Area is: " + TotalArea);  //print before update    
+   }
+     }
