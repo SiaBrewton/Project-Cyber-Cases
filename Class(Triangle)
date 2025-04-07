@@ -1,0 +1,64 @@
+//TRIANGLE CLASS
+public class Triangle {  //Triangle Class
+
+private int base;    //Private values 
+private int height;
+private String color;
+
+public Triangle () //declare default values
+{
+base = 64;  //2 digits of sudent id 00572064
+height = 4; //Birthdate
+color = "may"; //Birthmonth
+}
+
+public Triangle (int aBase, int aHeight, String aColor) //Constructor
+{
+  base = aBase;      
+  height = aHeight;
+  color = aColor;
+}
+
+public void changeBase(int newBase) //base method
+{
+   base = newBase;
+}
+
+public void  setHeight (int newH)//height method
+{
+   height = newH;
+}
+
+public void setColor (String newColor)//color method
+{
+   color = newColor;
+}
+
+public int getBase() //Accessors (base)
+{
+  return base;
+}
+
+public int getHeight()//Accessors (height)
+{
+  return height;
+}
+
+public String getColor()//Accessors (color)
+{
+  return color;
+}
+
+public double calArea()//Accessors (Area)
+{
+  return base * height / 2.0;
+}
+public String toString() //Accessors (All values)
+{
+  return "Triangle info -\nBase is : " + base + 
+          "\nHeight is : " + height + 
+          "\nColor is : " + color +
+          "\nArea is : " + calArea();
+}
+  }
+
